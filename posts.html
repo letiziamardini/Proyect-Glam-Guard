@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartado de Posts</title>
+    <link rel="stylesheet" href="estilopost.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Apartado de Posts</h1>
+        
+        <div class="new-post">
+            <h2>Publica tu post</h2>
+            <input type="text" id="post-text" placeholder="Escribe algo...">
+            <input type="file" id="post-image">
+            <button onclick="addPost()">Publicar</button>
+        </div>
+
+        <div id="posts-container">
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <footer>
+            <a href="inicio.html"><button>Volver a la Página Principal</button></a>
+        </footer>
+</body>
+</html>

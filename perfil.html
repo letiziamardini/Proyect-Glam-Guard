@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="estiloperfil.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mi Perfil</h1>
+        </header>
+        <main>
+            <section class="profile-info">
+                <div class="profile-pic">
+                    <img src="imagenes/WhatsApp%20Image%202024-08-26%20at%206.40.01%20PM.jpeg" alt="Foto de perfil" id="profilePic">
+                    <input type="file" id="uploadPic" accept="image/*" onchange="previewImage(event)">
+                </div>
+                <div class="profile-details">
+                    <h2 id="username">Nombre de Usuario</h2>
+                    <p id="bio">Biografía breve...</p>
+                </div>
+            </section>
+            
+            <section class="edit-profile">
+                <h2>Editar Perfil</h2>
+                <form id="profileForm">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre">
+
+                    <label for="username">Nombre de Usuario:</label>
+                    <input type="text" id="usernameInput" name="username" placeholder="Tu nombre de usuario">
+
+                    <label for="bio">Biografía:</label>
+                    <textarea id="bioInput" name="bio" placeholder="Cuéntanos sobre ti..."></textarea>
+
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <a href="inicio.html"><button>Volver a la Página Principal</button></a>
+        </footer>
+    </div>
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profilePic').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            alert('Perfil actualizado con éxito');
+        });
+    </script>
+</body>
+</html>

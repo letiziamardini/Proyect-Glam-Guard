@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con la oficina administrativa</title>
+    <link rel="stylesheet" href="chat1estilos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chat con la oficina administrativa</h1>
+        </header>
+
+        <div class="chat-window">
+            <div id="chatBox" class="chat-box">
+                <div class="message received">
+                    <p><strong>Administración:</strong> Hola, ¿cómo te podemos ayudar?</p>
+                </div>
+                
+            </div>
+            <div class="message-input">
+                <input type="text" id="message" placeholder="Escribe un mensaje">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+        <script>
+        function sendMessage() {
+            var message = document.getElementById('enviar').value;
+            var resultDiv = document.getElementById('result');
+            
+            if (message.trim() === '') {
+                resultDiv.innerHTML = '<p style="color: red;">Por favor, escribe un mensaje.</p>';
+            } else {
+                resultDiv.innerHTML = '<p>Mensaje enviado: ' + message + '</p>';
+                document.getElementById('message').value = ''; // Limpia el campo
+            }
+        }
+    </script>
+        <footer>
+            <a href="chat.html"><button>Volver a la Página de chats</button></a>
+        </footer>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
